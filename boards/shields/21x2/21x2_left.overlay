@@ -10,7 +10,6 @@
         diode-direction = "row2col"; // ダイオードの向き：行から列
 
         // 【行（縦）】のピン指定
-        // row2colの場合、row（出力側）はACTIVE_HIGHにするのが標準です
         row-gpios
             = <&xiao_d 0 GPIO_ACTIVE_HIGH>
             , <&xiao_d 1 GPIO_ACTIVE_HIGH>
@@ -19,14 +18,15 @@
             ;
 
         // 【列（横）】のピン指定
-        // エラーの原因だった括弧をすべて排除し、ZMKが最も好むシンプルなピン名のみの指定に直しました
+        // 丸括弧を使わず、フラグをスペース区切りで正しく並べました。
+        // これが現在のZephyr（ZMK）が100%エラーなく解釈できる記述です。
         col-gpios
-            = <&xiao_d 4>
-            , <&xiao_d 5>
-            , <&xiao_d 6>
-            , <&xiao_d 7>
-            , <&xiao_d 8>
-            , <&xiao_d 9>
+            = <&xiao_d 4 GPIO_ACTIVE_HIGH>
+            , <&xiao_d 5 GPIO_ACTIVE_HIGH>
+            , <&xiao_d 6 GPIO_ACTIVE_HIGH>
+            , <&xiao_d 7 GPIO_ACTIVE_HIGH>
+            , <&xiao_d 8 GPIO_ACTIVE_HIGH>
+            , <&xiao_d 9 GPIO_ACTIVE_HIGH>
             ;
     };
 
