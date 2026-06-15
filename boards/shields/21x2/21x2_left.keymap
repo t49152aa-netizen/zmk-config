@@ -1,0 +1,18 @@
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/keys.h>
+
+/ {
+    keymap {
+        compatible = "zmk,keymap";
+
+        default_layer {
+            // 見た目の通りにキーコードを並べます（合計21キー）
+            bindings = <
+    &kp Q  &kp W  &kp E  &kp R  &kp T
+    &kp A  &kp S  &kp D  &kp F  &kp G
+    &kp Z  &kp X  &kp C  &kp V  &kp B
+    &kp N1 &kp N2 &kp N3 &kp N4 &kp N5 &kp SPACE
+            >;
+        };
+    };
+};
