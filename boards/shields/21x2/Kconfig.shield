@@ -1,2 +1,2 @@
 config 21x2_LEFT
-    def_bool $(shields_list_contains,21x2l_eft)
+    def_bool $(shields_list_contains,21x2_left)
