@@ -10,23 +10,23 @@
         diode-direction = "row2col"; // ダイオードの向き：行から列
 
         // 【行（縦）】のピン指定
-        // ピン名とフラグの間はカンマ（,）ではなく「スペース」で繋ぐのが正解です。
+        // フラグをすべて消し、ピン番号だけを指定する形に直しました。
         row-gpios
-            = <&xiao_d 0 GPIO_ACTIVE_HIGH>
-            , <&xiao_d 1 GPIO_ACTIVE_HIGH>
-            , <&xiao_d 2 GPIO_ACTIVE_HIGH>
-            , <&xiao_d 3 GPIO_ACTIVE_HIGH>
+            = <&xiao_d 0>
+            , <&xiao_d 1>
+            , <&xiao_d 2>
+            , <&xiao_d 3>
             ;
 
         // 【列（横）】のピン指定
-        // 列側は、XIAOのデフォルト状態（何もつけない）にするのが最も安全です。
+        // エラーの最大の原因だった40行目以降も、すべてピン番号のみに統一しました。
         col-gpios
-            = <&xiao_d 4 GPIO_ACTIVE_HIGH>
-            , <&xiao_d 5 GPIO_ACTIVE_HIGH>
-            , <&xiao_d 6 GPIO_ACTIVE_HIGH>
-            , <&xiao_d 7 GPIO_ACTIVE_HIGH>
-            , <&xiao_d 8 GPIO_ACTIVE_HIGH>
-            , <&xiao_d 9 GPIO_ACTIVE_HIGH>
+            = <&xiao_d 4>
+            , <&xiao_d 5>
+            , <&xiao_d 6>
+            , <&xiao_d 7>
+            , <&xiao_d 8>
+            , <&xiao_d 9>
             ;
     };
 
