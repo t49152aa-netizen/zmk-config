@@ -7,7 +7,7 @@
     kscan0: kscan {
         compatible = "zmk,kscan-gpio-matrix";
         label = "KSCAN";
-        diode-direction = "col2row"; // ダイオードの向き
+        diode-direction = "row2col"; // ダイオードの向き
 
         // 【行（縦）】のピン指定（縦に4本：例としてD0〜D3）
         row-gpios
