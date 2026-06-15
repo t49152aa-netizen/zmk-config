@@ -7,34 +7,29 @@
     kscan0: kscan {
         compatible = "zmk,kscan-gpio-matrix";
         label = "KSCAN";
-        diode-direction = "row2col"; // ダイオードの向き：行から列
+        diode-direction = "row2col";
 
-        // 【行（縦）】のピン指定
-        // フラグをすべて消し、ピン番号だけを指定する形に直しました。
         row-gpios
-            = <&xiao_d 0>
-            , <&xiao_d 1>
-            , <&xiao_d 2>
-            , <&xiao_d 3>
+            = <&xiao_d 0 GPIO_ACTIVE_HIGH>
+            , <&xiao_d 1 GPIO_ACTIVE_HIGH>
+            , <&xiao_d 2 GPIO_ACTIVE_HIGH>
+            , <&xiao_d 3 GPIO_ACTIVE_HIGH>
             ;
 
-        // 【列（横）】のピン指定
-        // エラーの最大の原因だった40行目以降も、すべてピン番号のみに統一しました。
         col-gpios
-            = <&xiao_d 4>
-            , <&xiao_d 5>
-            , <&xiao_d 6>
-            , <&xiao_d 7>
-            , <&xiao_d 8>
-            , <&xiao_d 9>
+            = <&xiao_d 4 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
+            , <&xiao_d 5 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
+            , <&xiao_d 6 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
+            , <&xiao_d 7 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
+            , <&xiao_d 8 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
+            , <&xiao_d 9 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
             ;
     };
 
-    // マトリクス変換（4行×6列の回路を、実際の21キーの形に翻訳）
     default_transform: keymap_transform_0 {
         compatible = "zmk,matrix-transform";
-        columns = <6>; // 横は最大6列
-        rows = <4>;    // 縦は4行
+        columns = <6>;
+        rows = <4>;
 
         map = <
         RC(0,0) RC(0,1) RC(0,2) RC(0,3) RC(0,4)
