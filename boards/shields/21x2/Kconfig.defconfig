@@ -1,0 +1,6 @@
+if SHIELD_MY_AWESOME_KBD_LEFT
+
+config ZMK_KEYBOARD_NAME
+    default "21x2"
+
+endif
