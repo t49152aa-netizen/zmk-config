@@ -10,8 +10,7 @@
         diode-direction = "row2col"; // ダイオードの向き：行から列
 
         // 【行（縦）】のピン指定
-        // 括弧を外して、スペースで繋いで指定します。
-        // row2colの場合、rowはACTIVE_HIGH、colはPULL_DOWNにするのがZMKの標準です。
+        // row2colの場合、row（出力側）はACTIVE_HIGHにするのが標準です
         row-gpios
             = <&xiao_d 0 GPIO_ACTIVE_HIGH>
             , <&xiao_d 1 GPIO_ACTIVE_HIGH>
@@ -20,14 +19,14 @@
             ;
 
         // 【列（横）】のピン指定
-        // row2colの場合、col側にPULL_DOWN（または下位互換の記述）を設定します。
+        // エラーの原因だった括弧をすべて排除し、ZMKが最も好むシンプルなピン名のみの指定に直しました
         col-gpios
-            = <&xiao_d 4 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
-            , <&xiao_d 5 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
-            , <&xiao_d 6 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
-            , <&xiao_d 7 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
-            , <&xiao_d 8 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
-            , <&xiao_d 9 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
+            = <&xiao_d 4>
+            , <&xiao_d 5>
+            , <&xiao_d 6>
+            , <&xiao_d 7>
+            , <&xiao_d 8>
+            , <&xiao_d 9>
             ;
     };
 
