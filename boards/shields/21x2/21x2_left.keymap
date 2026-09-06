@@ -6,10 +6,10 @@
         compatible = "zmk,keymap";
 
         default_layer {
-            bindings = <
-                &kp Q &kp W &kp E &kp R &kp T
-                &kp A &kp S &kp D &kp F &kp G
-                &kp Z &kp X &kp C &kp V &kp B
+            bindings = 
+                &kp Q &kp W &kp E &kp R &kp T &kp Y
+                &kp A &kp S &kp D &kp F &kp G &kp H
+                &kp Z &kp X &kp C &kp V &kp B &kp N
                 &kp N1 &kp N2 &kp N3 &kp N4 &kp N5 &kp SPACE
             >;
         };
