@@ -27,9 +27,8 @@
         ;
 };
 
-/* D4/D5 は標準で I2C、D6/D7 は UART になっているので止める */
+/* D4/D5 は標準で I2C になっているので止める（UART はログ機能が使うので残す） */
 &xiao_i2c    { status = "disabled"; };
-&xiao_serial { status = "disabled"; };
 
 &pinctrl {
     spi0_default: spi0_default {
