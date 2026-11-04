@@ -6,3 +6,8 @@ include:
     shield: my_keyboard_right
   - board: seeeduino_xiao_ble
     shield: settings_reset
+  # デバッグ用: USB シリアルにログを出す（トラックボールの調査用）
+  - board: seeeduino_xiao_ble
+    shield: my_keyboard_left
+    cmake-args: -DCONFIG_ZMK_USB_LOGGING=y -DCONFIG_PMW3610_LOG_LEVEL_DBG=y -DCONFIG_PMW3610_INIT_POWER_UP_EXTRA_DELAY_MS=1000
+    artifact-name: my_keyboard_left_debug
